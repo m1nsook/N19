@@ -15,7 +15,7 @@ N19 starts as a modular monolith with a Bun workspace, Next.js/React/TypeScript 
 | notifications | In-app notifications |
 | billing | Optional premium entitlements without preferential speech or reach |
 
-Only the identity helper, initial database schema and pre-existing web scaffold exist now. New workspaces should be introduced when they have working code.
+The local prototype implements identity, authentication, sessions, profiles and schema upgrades. The web frontend uses same-origin Next.js rewrites to a loopback-only Bun API; the native SQLite driver stays outside Next.js bundling. Both processes start with one root command. This is a local runtime boundary, not a production microservice architecture. New workspaces should be introduced when they have working code.
 
 ## Trust boundaries
 

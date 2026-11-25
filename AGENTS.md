@@ -11,3 +11,5 @@
 
 - Target Windows localhost with SQLite by default; keep all migrations and data models portable to PostgreSQL. No production deployment in this phase.
 - Never commit SQLite databases, WAL files or migration exports. Keep the SQLite-to-PostgreSQL migration path updated whenever tables are added.
+
+- Keep README.md concise and stable; update only when essential setup, repository structure or project identity changes. Put milestone details and technical explanations in docs/ or pull requests.

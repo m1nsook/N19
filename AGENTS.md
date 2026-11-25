@@ -1,9 +1,10 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# N19 development rules
 
-## This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
-
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
+- Preserve the source-available license and public development history.
+- Never commit credentials, private deployment configuration, real user data or sensitive moderation detection thresholds.
+- Use Bun workspaces and one root lockfile. Do not add Docker or independent services without a demonstrated need.
+- Keep account identity distinct from editable display names; never offer paid handles.
+- Enforce permissions on the server; do not rely on UI hiding.
+- Treat proposed policies as drafts until approved by the maintainer.
+- For Next.js changes, follow apps/web/AGENTS.md and read the installed framework docs first.
+- Keep changes focused and add tests for security-sensitive behavior.

@@ -1,0 +1,20 @@
+Copyright (c) 2026 m1nsook via N19. All Rights Reserved.
+
+SOURCE-AVAILABLE SECURITY AUDIT LICENSE
+
+1. Purpose
+This source code is published publicly solely to allow users, researchers, and auditors to inspect, review, and verify the security and privacy of N19.
+
+2. Permitted Uses
+You are granted a limited, non-exclusive, non-transferable right to:
+- View, clone, and read the source code for personal inspection or security auditing.
+- Submit bug reports or security vulnerability disclosures to the copyright holder.
+
+3. Prohibited Uses
+Except as expressly permitted above, you may NOT:
+- Copy, modify, adapt, translate, or create derivative works based on this code.
+- Distribute, publish, sublicense, lease, rent, or sell the source code or compiled binaries.
+- Use any part of this code to build, host, operate, or offer any competing or commercial product or service.
+
+4. Disclaimer
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OR INSPECTION OF THIS SOFTWARE.

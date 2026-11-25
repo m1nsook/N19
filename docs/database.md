@@ -23,7 +23,7 @@ SQLite defaults to `.local/n19.sqlite`. The directory and database files are exc
 
 ## Future PostgreSQL transfer
 
-For the current version-1 accounts schema only, an explicit one-way transfer tool is included. Stop local writes and back up the SQLite file before running it. Use a fresh PostgreSQL database; the command refuses a nonempty accounts table and an unrecognized source schema, and imports in one target transaction.
+For the current version-2 accounts, credentials and profiles schema, an explicit one-way transfer tool is included. Stop local writes and back up the SQLite file before running it. Use a fresh PostgreSQL database; the command refuses a nonempty target application tables and an unrecognized source schema, and imports in one target transaction.
 
 ```powershell
 $env:N19_POSTGRES_URL = "postgresql://USER:PASSWORD@HOST:5432/DATABASE"
@@ -31,4 +31,4 @@ bun run db:migrate:postgres
 Remove-Item Env:N19_POSTGRES_URL
 ```
 
-The source is opened read-only. The target account count is verified before commit. Do not delete the source after transfer until the target is verified. The PostgreSQL import requires a reachable PostgreSQL server and has not yet been exercised against a live server. Switching the future application to PostgreSQL will also require the PostgreSQL repository adapter; the migration command alone does not switch the web app.
+The source is opened read-only. Account, credential and profile counts are verified before commit. Password hashes transfer without plaintext; sessions are deliberately excluded so users sign in again. Run db:init to upgrade an old local database before transferring. Do not delete the source after transfer until the target is verified. The PostgreSQL import requires a reachable PostgreSQL server and has not yet been exercised against a live server. Switching the future application to PostgreSQL will also require the PostgreSQL repository adapter; the migration command alone does not switch the web app.

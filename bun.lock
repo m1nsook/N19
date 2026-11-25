@@ -5,6 +5,9 @@
     "": {
       "name": "n19",
     },
+    "apps/api": {
+      "name": "@n19/api",
+    },
     "apps/web": {
       "name": "@n19/web",
       "dependencies": {
@@ -50,6 +53,8 @@
     "unrs-resolver",
   ],
   "packages": {
+    "@n19/api": ["@n19/api@workspace:apps/api"],
+
     "@n19/database": ["@n19/database@workspace:packages/database"],
 
     "@n19/identity": ["@n19/identity@workspace:packages/identity"],

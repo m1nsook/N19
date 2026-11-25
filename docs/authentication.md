@@ -1,0 +1,5 @@
+# Local authentication prototype
+
+This is not approved for public hosting. Use test credentials. Users register with an email address, display name and password (12–128 characters). Handles are assigned on the server, never accepted from clients. Passwords are hashed with Argon2id. Sessions use random opaque cookies with only SHA-256 token digests stored in SQLite, a 30-day expiry, HttpOnly and SameSite=Strict. The cookie is not Secure because local development uses HTTP; public HTTPS deployment must change that. Mutations enforce exact local origins. Local API requests have size and authentication attempt limits.
+
+Profiles expose only ID, handle, display name, bio and creation timestamp. Email is never returned by public profile endpoints. Email verification, password recovery, session management across devices, abuse prevention, avatar uploads and production security review are deferred. All new persistent account data is covered by the current PostgreSQL transfer except sessions, which intentionally require a new sign-in.

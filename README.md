@@ -8,6 +8,7 @@ This repository is source-available for inspection under the [Security Audit Lic
 
 ## Repository
 
+- `apps/api` — local Bun account API (loopback only).
 - `apps/web` — Next.js web application and existing shadcn components.
 - `packages/identity` — shared, server-side public-handle generation and tests.
 - `packages/database` — SQLite-first persistence and PostgreSQL migration tooling.
@@ -25,6 +26,6 @@ bun run test
 bun run lint
 ```
 
-Open http://127.0.0.1:3000. No VPS, Docker, database server or cloud account is required. The local SQLite file lives in `.local/n19.sqlite` at the repository root and is ignored by Git. The initial database schema exists, but registration and web persistence are not connected yet. See [database migration](docs/database.md). Production deployment is deferred.
+Open http://127.0.0.1:3000. No VPS, Docker, database server or cloud account is required. The local SQLite file lives in `.local/n19.sqlite` at the repository root and is ignored by Git. Registration, sign-in, persistent sessions and editable display names/bios are available in this local prototype. Use test credentials only. Avatar uploads, verification, recovery, posting and production security are not implemented. The root dev command starts both the Next.js frontend and a private loopback Bun API on port 4190. See [database migration](docs/database.md). Production deployment is deferred.
 
 See [architecture](docs/architecture.md) and [principles](docs/principles.md).

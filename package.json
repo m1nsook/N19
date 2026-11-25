@@ -1,6 +1,6 @@
 {
   "name": "n19",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "packageManager": "bun@1.4.0",
   "workspaces": [
@@ -8,11 +8,11 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "bun run --filter @n19/web dev",
+    "dev": "bun scripts/local.ts dev",
     "build": "bun run --filter @n19/web build",
-    "start": "bun run --filter @n19/web start",
+    "start": "bun scripts/local.ts start",
     "lint": "bun run --filter @n19/web lint",
-    "test": "bun test packages",
+    "test": "bun test packages apps/api",
     "db:init": "bun packages/database/src/cli.ts init",
     "db:migrate:postgres": "bun packages/database/src/cli.ts migrate-postgres"
   },

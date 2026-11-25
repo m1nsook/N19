@@ -38,6 +38,9 @@
         "typescript": "^5",
       },
     },
+    "packages/database": {
+      "name": "@n19/database",
+    },
     "packages/identity": {
       "name": "@n19/identity",
     },
@@ -47,6 +50,8 @@
     "unrs-resolver",
   ],
   "packages": {
+    "@n19/database": ["@n19/database@workspace:packages/database"],
+
     "@n19/identity": ["@n19/identity@workspace:packages/identity"],
 
     "@n19/web": ["@n19/web@workspace:apps/web"],

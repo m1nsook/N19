@@ -12,7 +12,9 @@
     "build": "bun run --filter @n19/web build",
     "start": "bun run --filter @n19/web start",
     "lint": "bun run --filter @n19/web lint",
-    "test": "bun test packages"
+    "test": "bun test packages",
+    "db:init": "bun packages/database/src/cli.ts init",
+    "db:migrate:postgres": "bun packages/database/src/cli.ts migrate-postgres"
   },
   "trustedDependencies": [
     "sharp",

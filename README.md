@@ -10,19 +10,21 @@ This repository is source-available for inspection under the [Security Audit Lic
 
 - `apps/web` — Next.js web application and existing shadcn components.
 - `packages/identity` — shared, server-side public-handle generation and tests.
+- `packages/database` — SQLite-first persistence and PostgreSQL migration tooling.
 - `docs` — architecture and planned product behavior.
 
-## Maintainer development
+## Maintainer development — Windows localhost
 
 Bun 1.4.0 is specified in the root package manifest. The repository uses a single workspace lockfile.
 
 ```sh
 bun install --frozen-lockfile
+bun run db:init
 bun run dev
 bun run test
 bun run lint
 ```
 
-The existing Next.js development/build configuration is retained. Production deployment is separate and private. N19 is not yet a live social network; no account, moderation or persistence service is operational.
+Open http://127.0.0.1:3000. No VPS, Docker, database server or cloud account is required. The local SQLite file lives in `.local/n19.sqlite` at the repository root and is ignored by Git. The initial database schema exists, but registration and web persistence are not connected yet. See [database migration](docs/database.md). Production deployment is deferred.
 
 See [architecture](docs/architecture.md) and [principles](docs/principles.md).

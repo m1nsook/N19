@@ -1,6 +1,6 @@
 # Architecture (initial)
 
-N19 starts as a modular monolith with a Bun workspace, Next.js/React/TypeScript frontend and existing shadcn UI. PostgreSQL is the planned persistence layer; Prisma is a candidate, not installed yet. Separate infrastructure and workers only when justified.
+N19 starts as a modular monolith with a Bun workspace, Next.js/React/TypeScript frontend and existing shadcn UI. SQLite is the default on Windows localhost, with a planned PostgreSQL deployment target and a portable data access boundary. The initial implementation uses Bun's built-in database drivers and shared SQL migrations; no ORM dependency is required. Separate infrastructure and workers only when justified.
 
 ## Planned modules
 
@@ -8,14 +8,14 @@ N19 starts as a modular monolith with a Bun workspace, Next.js/React/TypeScript 
 | --- | --- |
 | identity | Server-generated public handles, immutable account IDs |
 | auth | Registration, verified contact, sessions and recovery |
-| database | PostgreSQL schema, migrations and transactional persistence |
+| database | SQLite/PostgreSQL portable schema, migrations and transactional persistence |
 | social | Posts, replies, follows, likes, reposts and feed access |
 | moderation | Content classification, reporting, visibility enforcement and appeals |
 | media | Private upload quarantine, validation, approved media delivery |
 | notifications | In-app notifications |
 | billing | Optional premium entitlements without preferential speech or reach |
 
-Only the identity helper and pre-existing web scaffold exist now. New workspaces should be introduced when they have working code.
+Only the identity helper, initial database schema and pre-existing web scaffold exist now. New workspaces should be introduced when they have working code.
 
 ## Trust boundaries
 

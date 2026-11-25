@@ -8,3 +8,6 @@
 - Treat proposed policies as drafts until approved by the maintainer.
 - For Next.js changes, follow apps/web/AGENTS.md and read the installed framework docs first.
 - Keep changes focused and add tests for security-sensitive behavior.
+
+- Target Windows localhost with SQLite by default; keep all migrations and data models portable to PostgreSQL. No production deployment in this phase.
+- Never commit SQLite databases, WAL files or migration exports. Keep the SQLite-to-PostgreSQL migration path updated whenever tables are added.
